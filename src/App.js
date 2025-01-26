@@ -1,34 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './components/LoginPage';
-import SignupPage from './components/SignupPage';
-import HomePage from './components/HomePage';
-import { AuthProvider } from './contexts/authContext';
-import PrivateRoute from './components/PrivateRoute';
+import React, { useEffect } from 'react';
+import MessagingApp from './components/MessagingApp';
+import socket from './components/socket';
+import './styles/global.css';
 
 function App() {
+  useEffect(() => {
+   console.log(socket);
+    
+  },[])
   return (
-    <AuthProvider>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route 
-              path="/home" 
-              element={
-                <PrivateRoute>
-                  <HomePage />
-                </PrivateRoute>
-              } 
-            />
-            <Route path="*" element={<LoginPage />} />
-          </Routes>
-        </Router>
-      </div>
-    </AuthProvider>
+    <div className="app">
+      <MessagingApp />
+    </div>
   );
 }
 
-export default App;
+export default App;

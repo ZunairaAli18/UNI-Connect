@@ -1,0 +1,125 @@
+.contact-list {
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.contact-list h2 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-size: 1.5em;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background-color: var(--bg-primary);
+  border-radius: 20px;
+  border: 1px solid var(--color-secondary);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: none;
+  margin-left: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.contact-item:hover {
+  background-color: var(--color-secondary);
+}
+
+.contact-item.selected {
+  background-color: var(--color-secondary);
+}
+
+.avatar-container {
+  position: relative;
+  margin-right: 15px;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+}
+
+.status-indicator.online {
+  background-color: #4CAF50;
+}
+
+.status-indicator.offline {
+  background-color: #9E9E9E;
+}
+
+.status-indicator.away {
+  background-color: #FFC107;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.contact-status {
+  font-size: 0.8em;
+  color: var(--text-secondary);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-item {
+  animation: fadeInUp 0.3s ease forwards;
+  opacity: 0;
+}
+
+.contact-item:nth-child(1) { animation-delay: 0.1s; }
+.contact-item:nth-child(2) { animation-delay: 0.2s; }
+.contact-item:nth-child(3) { animation-delay: 0.3s; }
+.contact-item:nth-child(4) { animation-delay: T0.4s;}
